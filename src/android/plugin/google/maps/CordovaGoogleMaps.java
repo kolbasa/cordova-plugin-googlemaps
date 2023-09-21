@@ -454,6 +454,8 @@ public class CordovaGoogleMaps extends CordovaPlugin implements ViewTreeObserver
     pluginMap.mapCtrl = CordovaGoogleMaps.this;
     pluginMap.self = pluginMap;
 
+    pluginMap.cordova = null; // avoid failure caused by repeated initialization
+
     PluginEntry pluginEntry = new PluginEntry(mapId, pluginMap);
     pluginManager.addService(pluginEntry);
 
