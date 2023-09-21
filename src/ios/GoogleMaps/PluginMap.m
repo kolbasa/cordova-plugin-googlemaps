@@ -656,7 +656,6 @@
 }
 
 - (void)setActiveMarkerId:(CDVInvokedUrlCommand*)command {
-
   [[NSOperationQueue mainQueue] addOperationWithBlock:^{
 
     NSString *markerId = [command.arguments objectAtIndex:0];
@@ -667,7 +666,7 @@
     }
 
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-    [(CDVCommandDelegateImpl *)self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
   }];
 }
 
